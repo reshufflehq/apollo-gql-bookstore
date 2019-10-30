@@ -1,13 +1,18 @@
 import React from 'react';
+import AddBookForm from './AddBookForm';
+import BookList from './BookList';
 
-function App() {
+export default function App() {
   return (
     <>
       <header>
-        Hello
+        <h1>Reshuffle Book Store</h1>
       </header>
+      <section>
+        <AddBookForm />
+        <hr />
+        <BookList />
+      </section>
     </>
   );
 }
-
-export default App;
