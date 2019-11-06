@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
+    "@material-ui/core": "^4.6.0",
+    "@material-ui/styles": "^4.6.0",
     "@reshuffle/code-transform": "0.0.3",
     "@reshuffle/db": "^0.5.3",
     "@reshuffle/fetch-runtime": "0.0.6",
