@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "key": "/books/DY1cscbWCk3F4_ZUakA3B",
+            "data": {
+                "id": "DY1cscbWCk3F4_ZUakA3B",
+                "title": "The Cyberiad",
+                "author": "Stanislaw Lem"
+            }
+        },
+        {
+            "key": "/books/TrNYisRbJpUZfAGfF4lZ",
+            "data": {
+                "id": "TrNYisRbJpUZfAGfF4lZ",
+                "title": "The C Programming Language",
+                "author": "Brian Kernighan and Dennis Ritchie"
+            }
+        },
+        {
+            "key": "/books/YIv1_MrY_0EibooqGWQSO",
+            "data": {
+                "id": "YIv1_MrY_0EibooqGWQSO",
+                "title": "Norstrilia",
+                "author": "Cordwainer Smith"
+            }
+        }
+    ]
+}
