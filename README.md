@@ -5,4 +5,4 @@ Demonstrates how to setup a full stack Apollo GraphQL client and server working 
 
 ## Screenshots
 
-<img src="./app-screen.png" width="50%" height="50%">
+<img src="./app-screen.png" width="30%" height="30%">
