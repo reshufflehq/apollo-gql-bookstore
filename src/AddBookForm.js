@@ -37,7 +37,7 @@ export default function AddBookForm() {
           <TextField
             label='Title'
             name='title'
-            ref={register({ required: true, minLength: 1 })}
+            inputRef={register({ required: true, minLength: 1 })}
           />
           {errors.title && errors.title.message}
         </Grid>
@@ -45,7 +45,7 @@ export default function AddBookForm() {
           <TextField
             label='Author'
             name='author'
-            ref={register({ required: true, minLength: 1 })}
+            inputRef={register({ required: true, minLength: 1 })}
           />
           {errors.author && errors.author.message}
         </Grid>
