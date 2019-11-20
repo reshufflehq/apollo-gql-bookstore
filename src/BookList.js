@@ -9,6 +9,7 @@ const query = gql`
         id
         title
         author
+        pages
       }
   }
 `;
@@ -28,10 +29,11 @@ export default function BookList() {
   if (error) return <p>ERROR</p>;
   return (
     <List>
-      {data.getBooks.map(({ id, title, author }) => (
+      {data.getBooks.map(({ id, title, author, pages }) => (
         <ListItem key={id}>
           <Typography variant='body1' className={classes.title}>{title}</Typography>
-          <Typography variant='subtitle2' color='primary'>{author}</Typography>
+          <Typography variant='subtitle2' className={classes.title} color='primary'>{author}</Typography>
+          <Typography variant='subtitle2'>{pages}</Typography>
         </ListItem>
       ))}
     </List>

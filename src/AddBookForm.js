@@ -5,11 +5,12 @@ import useForm from 'react-hook-form';
 import { TextField, Button, Grid, createStyles, makeStyles } from '@material-ui/core';
 
 const mutation = gql`
-  mutation AddBook($title: String!, $author: String!) {
-    addBook(title: $title, author: $author) {
+  mutation AddBook($title: String!, $author: String!, $pages: String!) {
+    addBook(title: $title, author: $author, pages: $pages) {
       id
       title
       author
+      pages
     }
   }
 `;
@@ -27,7 +28,7 @@ export default function AddBookForm() {
   const [addBook, { loading, error }] = useMutation(mutation);
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = useCallback((variables) => addBook({ variables }), [addBook]);
-
+  
   if (loading) return <div>Loading...</div>;
   if (error) return <p>ERROR</p>;
   return (
@@ -48,6 +49,13 @@ export default function AddBookForm() {
             inputRef={register({ required: true, minLength: 1 })}
           />
           {errors.author && errors.author.message}
+        </Grid>
+        <Grid item className={classes.item}>
+          <TextField
+            label='Pages'
+            name='pages'
+            inputRef={register({ required: true, minLength: 1 })}
+          />
         </Grid>
         <Grid item className={classes.item}>
           <Button color='primary' variant='outlined' type='submit' disabled={loading}>
