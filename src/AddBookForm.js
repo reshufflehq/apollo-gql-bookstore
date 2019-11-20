@@ -27,8 +27,7 @@ export default function AddBookForm() {
   const classes = useStyle();
   const [addBook, { loading, error }] = useMutation(mutation);
   const { handleSubmit, register, errors } = useForm();
-  const onSubmit = useCallback((variables) => addBook({ variables }), [addBook]);
-  
+  const onSubmit = useCallback((variables) => addBook({ variables }), [addBook]);  
   if (loading) return <div>Loading...</div>;
   if (error) return <p>ERROR</p>;
   return (
