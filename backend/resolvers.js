@@ -9,9 +9,9 @@ export default {
     },
   },
   Mutation: {
-    addBook: async (_, { title, author, pages }) => {
+    addBook: async (_, { title, author, numPages }) => {
       const id = nanoid();
-      const book = { id, title, author, pages };
+      const book = { id, title, author, numPages };
       await create(`/books/${id}`, book);
       return book;
     },

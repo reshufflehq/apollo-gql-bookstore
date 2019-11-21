@@ -5,15 +5,14 @@ export default gql`
     id: ID!
     title: String!
     author: String!
-    pages: String
+    numPages: Int!
   }
 
   type Query {
     getBooks: [Book]
-    bookByAuthor(author:String!): [Book]
   }
 
   type Mutation {
-    addBook(title: String!, author: String!, pages: String!): Book!
+    addBook(title: String!, author: String!, numPages: Int!): Book!
   }
 `;

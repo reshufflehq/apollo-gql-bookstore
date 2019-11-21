@@ -5,7 +5,8 @@
             "data": {
                 "id": "DY1cscbWCk3F4_ZUakA3B",
                 "title": "The Cyberiad",
-                "author": "Stanislaw Lem"
+                "author": "Stanislaw Lem",
+                "numPages": 295
             }
         },
         {
@@ -13,7 +14,8 @@
             "data": {
                 "id": "TrNYisRbJpUZfAGfF4lZ",
                 "title": "The C Programming Language",
-                "author": "Brian Kernighan and Dennis Ritchie"
+                "author": "Brian Kernighan and Dennis Ritchie",
+                "numPages": 272
             }
         },
         {
@@ -21,7 +23,8 @@
             "data": {
                 "id": "YIv1_MrY_0EibooqGWQSO",
                 "title": "Norstrilia",
-                "author": "Cordwainer Smith"
+                "author": "Cordwainer Smith",
+                "numPages": 249
             }
         }
     ]
