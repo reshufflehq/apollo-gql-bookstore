@@ -17,15 +17,21 @@ const mutation = gql`
 
 const useStyle = makeStyles((theme) =>
   createStyles({
-    root: {
-      width: '60%'
+    inputDesktop: {
+      [theme.breakpoints.down('xs')]: {
+        display: 'none',
+      },
     },
-    author: {
-      marginLeft: 10
-    },
-    title: {
-      marginLeft: 20
-    }  
+    inputMobile: {
+      [theme.breakpoints.down('xs')]: {
+        display: 'visible',
+      },
+      [theme.breakpoints.up('sm')]: {
+        display: 'none',
+      },
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    }
   })
 );
 
@@ -37,38 +43,45 @@ export default function AddBookForm() {
     title, author, numPages,
   }) => addBook({ variables: { title, author, numPages: parseInt(numPages, 10) } }), [addBook]);
   if (loading) return <div>Loading...</div>;
-  if (error) return <p>Error</p>;
+  if (error) return <p>ERROR</p>;
   return (
-    <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Grid container alignItems='flex-end' direction='row'>
-        <Grid item xs={3}>
-          <TextField className={classes.title}
+        <Grid item xs={4} sm={3}>
+          <TextField
             label='Title'
             name='title'
             inputRef={register({ required: true, minLength: 1 })}
           />
           {errors.title && errors.title.message}
         </Grid>
-        <Grid item xs={3}>
-          <TextField className={classes.author}
+        <Grid item xs={4} sm={3}>
+          <TextField
             label='Author'
             name='author'
             inputRef={register({ required: true, minLength: 1 })}
           />
           {errors.author && errors.author.message}
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4} sm={3}>
           <TextField
-            label='Num oF Pages'
+            label='Pages'
             name='numPages'
             type='number'
-            inputRef={register({ required: true, minLength: 1 })}
+            inputRef={register({ required: true, min: 1 })}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item sm={3} className={classes.inputDesktop}>
           <Button color='primary' variant='outlined' type='submit' disabled={loading}>
             Create a book
           </Button>
+        </Grid>
+        <Grid item xs={12} className={classes.inputMobile}>
+          <Grid container justify='center'>
+            <Button color='primary' variant='outlined' type='submit' fullWidth disabled={loading}>
+              Create a book
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </form>

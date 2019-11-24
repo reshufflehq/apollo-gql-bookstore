@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, Grid, Typography, makeStyles, createStyles } from '@material-ui/core';
+import { ListItem, Grid, Typography, makeStyles, createStyles } from '@material-ui/core';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -16,8 +16,12 @@ const query = gql`
 
 const useStyle = makeStyles((theme) =>
   createStyles({
-    root: {
-      width: '60%'
+    content: {
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
+    },
+    space: {
+      marginTop: theme.spacing(2),
     }
   })
 );
@@ -28,22 +32,20 @@ export default function BookList() {
   if (loading) return <div>Loading...</div>;
   if (error) return <p>ERROR</p>;
   return (
-      <List>
+      <>
         {data.getBooks.map(({ id, title, author, numPages }) => (
-          <Grid className={classes.root} container alignItems='flex-end' direction='row'>
-            <ListItem key={id}>
-              <Grid item xs={3}>
-                <Typography variant='body1' >{title}</Typography>
-              </Grid>
-              <Grid item xs={3}>
-                <Typography variant='subtitle2' color='primary'>{author}</Typography>
-              </Grid>
-              <Grid item xs={3}>
-                <Typography variant='subtitle2'>{numPages}</Typography>
-              </Grid>
-            </ListItem>
+          <Grid container key={id}>
+            <Grid item xs={4} sm={3} className = {classes.space}>
+              <Typography variant='body1' className={classes.content}>{title}</Typography>
+            </Grid>
+            <Grid item xs={4} sm={3} className = {classes.space}>
+              <Typography variant='subtitle2' color='primary' className={classes.content}>{author}</Typography>
+            </Grid>
+            <Grid item xs={4} sm={3} className = {classes.space}>
+              <Typography variant='subtitle2'>{numPages}</Typography>
+            </Grid>
           </Grid>
         ))}
-      </List>
+      </>
   );
 }
