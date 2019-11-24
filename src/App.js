@@ -25,7 +25,6 @@ const useStyle = makeStyles((theme) =>
       },
       [theme.breakpoints.down('xs')]: {
         fontSize: '20px',
-        display: 'visible',
       },
     }
   })
@@ -41,7 +40,7 @@ export default function App() {
             <Typography variant='h3' className = {classes.titleDesktop} >Reshuffle GraphQL Powered Book Store</Typography>
             <Typography className = {classes.titleMobile} >GraphQL Book Store</Typography>
           </Grid>
-          <Grid item >
+          <Grid item>
             <Button variant='outlined' color='secondary' href='/graphql'>Playground</Button>
           </Grid>
         </Grid>

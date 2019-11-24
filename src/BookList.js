@@ -20,7 +20,7 @@ const useStyle = makeStyles((theme) =>
       textOverflow: 'ellipsis',
       overflow: 'hidden',
     },
-    space: {
+    bookRow: {
       marginTop: theme.spacing(2),
     }
   })
@@ -34,14 +34,14 @@ export default function BookList() {
   return (
       <>
         {data.getBooks.map(({ id, title, author, numPages }) => (
-          <Grid container key={id}>
-            <Grid item xs={4} sm={3} className = {classes.space}>
+          <Grid container key={id} className={classes.bookRow}>
+            <Grid item xs={4} sm={3} >
               <Typography variant='body1' className={classes.content}>{title}</Typography>
             </Grid>
-            <Grid item xs={4} sm={3} className = {classes.space}>
+            <Grid item xs={4} sm={3}>
               <Typography variant='subtitle2' color='primary' className={classes.content}>{author}</Typography>
             </Grid>
-            <Grid item xs={4} sm={3} className = {classes.space}>
+            <Grid item xs={4} sm={3}>
               <Typography variant='subtitle2'>{numPages}</Typography>
             </Grid>
           </Grid>

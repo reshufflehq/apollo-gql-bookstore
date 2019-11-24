@@ -23,14 +23,11 @@ const useStyle = makeStyles((theme) =>
       },
     },
     inputMobile: {
-      [theme.breakpoints.down('xs')]: {
-        display: 'visible',
-      },
       [theme.breakpoints.up('sm')]: {
         display: 'none',
       },
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
     }
   })
 );
@@ -77,11 +74,9 @@ export default function AddBookForm() {
           </Button>
         </Grid>
         <Grid item xs={12} className={classes.inputMobile}>
-          <Grid container justify='center'>
-            <Button color='primary' variant='outlined' type='submit' fullWidth disabled={loading}>
-              Create a book
-            </Button>
-          </Grid>
+          <Button color='primary' variant='outlined' type='submit' fullWidth disabled={loading}>
+            Create a book
+          </Button>
         </Grid>
       </Grid>
     </form>
