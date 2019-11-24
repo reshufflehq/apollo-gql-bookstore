@@ -11,12 +11,12 @@ const useStyle = makeStyles((theme) =>
       padding: theme.spacing(1),
     },
     titleDesktop: {
-      fontSize: '45px',
+      fontSize: '2.8125rem',
       [theme.breakpoints.down('xs')]: {
         display: 'none',
       },
       [theme.breakpoints.down('sm')]: {
-        fontSize: '25px',
+        fontSize: '1.5625rem',
       },
     },
     titleMobile: {
@@ -24,7 +24,7 @@ const useStyle = makeStyles((theme) =>
         display: 'none',
       },
       [theme.breakpoints.down('xs')]: {
-        fontSize: '20px',
+        fontSize: '1.25rem',
       },
     }
   })
