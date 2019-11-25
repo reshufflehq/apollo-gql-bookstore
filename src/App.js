@@ -46,7 +46,7 @@ export default function App() {
         </Grid>
       </AppBar>
       <Container component='section' maxWidth='xl'>
-        <Grid justify="left">
+        <Grid>
           <AddBookForm />
           <BookList />
         </Grid>

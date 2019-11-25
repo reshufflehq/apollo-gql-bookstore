@@ -35,7 +35,7 @@ const useStyle = makeStyles((theme) =>
 export default function AddBookForm() {
   const classes = useStyle();
   const [addBook, { loading, error }] = useMutation(mutation);
-  const { handleSubmit, register, errors, setValue } = useForm();
+  const { handleSubmit, register, errors } = useForm();
   const onSubmit = useCallback(({
     title, author, numPages,
   }) => addBook({ variables: { title, author, numPages: parseInt(numPages, 10) } }), [addBook]);

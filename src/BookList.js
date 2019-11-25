@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItem, Grid, Typography, makeStyles, createStyles } from '@material-ui/core';
+import { Grid, Typography, makeStyles, createStyles } from '@material-ui/core';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
