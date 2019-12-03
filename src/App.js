@@ -41,6 +41,12 @@ export default function App() {
             <Typography className = {classes.titleMobile} >GraphQL Book Store</Typography>
           </Grid>
           <Grid item>
+            {/*
+              Production note: the GraphQL Playground is enabled for production
+              environments in ../backend/_handler.js only for demonstration
+              purposes - if you are building a production app it is recommended
+              to disable the playground.
+              */}
             <Button variant='outlined' color='secondary' href='/graphql'>Playground</Button>
           </Grid>
         </Grid>
